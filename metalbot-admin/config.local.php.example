@@ -1,0 +1,12 @@
+<?php
+/**
+ * Скопируйте в `config.local.php` и задайте свои значения.
+ * `config.local.php` не коммитьте (секреты).
+ */
+return [
+    'app_secret'  => 'СГЕНЕРИРУЙТЕ_СЛУЧАЙНУЮ_СТРОКУ_32+_СИМВОЛА',
+    'api_key'     => 'СГЕНЕРИРУЙТЕ_ОТДЕЛЬНЫЙ_КЛЮЧ_ДЛЯ_API',
+    'db_path'     => __DIR__ . '/db/database.sqlite',
+    'session_name' => 'mb_admin',
+    'time_zone'   => 'Europe/Moscow',
+];

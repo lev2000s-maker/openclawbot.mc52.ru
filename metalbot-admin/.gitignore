@@ -1,0 +1,5 @@
+/config.local.php
+/db/database.sqlite
+/logs/app.log
+uploads/prices/*
+!uploads/prices/.gitkeep

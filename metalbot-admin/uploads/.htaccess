@@ -1,0 +1,12 @@
+# Каталог загрузок: не выполняем скрипты
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(php|phtml|php3|phar|pl|cgi)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(php|phtml|php3|phar|pl|cgi)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>

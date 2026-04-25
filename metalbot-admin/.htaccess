@@ -1,0 +1,30 @@
+# metalbot-admin (reg.ru / Apache)
+# Критично: в подпапках `db/`, `logs/`, `uploads/` — свои .htaccess (см. ниже).
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # При установке в подпапку: RewriteBase /имя_папки/
+</IfModule>
+
+# Листинг отключать
+Options -Indexes
+
+# Запрет прямого чтения sqlite из корня (дублирование: основная защита в db/.htaccess)
+<Files "database.sqlite">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
+<Files "app.log">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
